@@ -1,0 +1,14 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+
+  input,
+  button {
+    font-family: inherit;
+  }
+}

@@ -10,8 +10,8 @@ const InputAtom = ({
   id,
   required,
 }) => (
-  <div className={styles.inputWrap}>
-    <label htmlFor={id} className={styles.inputLabel}>
+  <div className={styles['input-wrap']}>
+    <label htmlFor={id} className={styles['input-label']}>
       {label}
     </label>
     <input
@@ -24,7 +24,7 @@ const InputAtom = ({
       onChange={handleInput}
       value={value}
     />
-    <span className={styles.inputGrow}></span>
+    <span className={styles['input-grow']}></span>
   </div>
 );
 

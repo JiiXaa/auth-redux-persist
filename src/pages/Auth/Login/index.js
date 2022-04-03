@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ButtonAtom from '../../../components/common/ButtonAtom';
 import InputAtom from '../../../components/common/InputAtom';
 import styles from './Login.module.scss';
 
@@ -11,8 +12,8 @@ const Login = () => {
   };
 
   return (
-    <div className='login-wrap'>
-      <div className='login-content'>
+    <div className={styles['login-wrap']}>
+      <div className={styles['login-content']}>
         <h1>Welcome</h1>
         <p>Please Login to your account</p>
         <form onSubmit={handleSubmit}>
@@ -26,6 +27,17 @@ const Login = () => {
             value={userName}
             type='text'
           />
+          <InputAtom
+            required
+            label='Password'
+            placeholder='*************'
+            id='password'
+            name='password'
+            handleInput={(e) => setPassword(e.target.value)}
+            value={password}
+            type='password'
+          />
+          <ButtonAtom label='login' />
         </form>
       </div>
     </div>

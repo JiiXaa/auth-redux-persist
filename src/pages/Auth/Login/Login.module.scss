@@ -1,0 +1,15 @@
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .login-content {
+    min-width: 400px;
+
+    p {
+      margin-bottom: 2.5rem;
+      color: #a9a9a9;
+    }
+  }
+}
