@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   details: null,
 };
 
-const userReducer = (state, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UserActionTypes.USER_SET_DETAILS:
       return {

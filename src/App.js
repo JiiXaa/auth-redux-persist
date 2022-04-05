@@ -1,15 +1,27 @@
-import { Routes, Route } from 'react-router-dom';
+import './App.scss';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Auth/Login';
 import Home from './pages/Home';
-import './App.scss';
+import { connect } from 'react-redux';
+import { PrivateRoute, PublicRoute } from './routes/routesCheck';
+import { HOME_PATH, LOGIN_PATH } from './routes/routesPath';
 
-function App() {
+function App({ user }) {
   return (
     <Routes>
-      <Route path='/' element={<Login />} />
-      <Route path='/home' element={<Home />} />
+      <PublicRoute
+        path={LOGIN_PATH}
+        element={<Login />}
+        loggedInPath={HOME_PATH}
+      />
+      <PrivateRoute path={HOME_PATH} element={<Home />} />
+      <Route path='*' element={<Navigate to='/' />} />
     </Routes>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(mapStateToProps)(App);
